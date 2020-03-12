@@ -2,7 +2,7 @@
 
 namespace JsonSchemaForm\ChunkGenerator;
 
-class StringField extends \JsonSchemaForm\ChunkGenerator {
+class FileField extends \JsonSchemaForm\ChunkGenerator {
 	public function render($options = array()) {
 		if (empty($this->schema->enum)) {
 			$inputType = (isset($this->schema->inputType) ? $this->schema->inputType : 'input');
