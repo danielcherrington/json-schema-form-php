@@ -1,0 +1,7 @@
+<input type="hidden" name="{{ name }}" id="{{ id }}" value="{{ value}}">
+<span id="{{ id }}_file" class="file" style="padding:5px;border:#ccc 1px dotted;background-color:#eee;font-weight:bold;">
+    {{ value }}
+    <a onclick="document.getElementById('{{id}}_file').style.display = 'none';document.getElementById('{{id}}').type  = 'file';">
+        <i class="fa fa-close file-remove" style="color:red;"></i>
+    </a>
+</span>

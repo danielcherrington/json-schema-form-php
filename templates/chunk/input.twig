@@ -1,4 +1,10 @@
 {% if label %}
     <label for="{{ id }}">{{label}}</label>
 {% endif %}
-<input {% if required == "1" %} required="required" {% endif %} class="form-control" type="{{ type }}" name="{{ name }}" value="{{ value }}" id="{{ id }}">
+
+{%if ( type != "file" ) or ( type == "file" and value is empty ) %}
+    <input {% if required == "1" %} required="required" {% endif %} class="form-control" type="{{ type }}" name="{{ name }}" value="{{ value }}" id="{{ id }}">
+{% endif %}
+{% if type == "file" and value is not empty %}
+    {% include 'chunk/file.twig' %}
+{% endif %}
